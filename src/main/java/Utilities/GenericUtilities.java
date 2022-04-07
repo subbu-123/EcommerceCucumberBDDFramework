@@ -3,6 +3,7 @@ package Utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class GenericUtilities {
 	
@@ -26,13 +27,21 @@ public class GenericUtilities {
 		element.sendKeys(text);
 	}
 	
+	public void clearTextPresentinInputField(WebElement element)
+	{
+		element.clear();
+	}
 	
 	public void ClickOnButton(WebElement element)
 	{
 		element.click();
 	}
 	
-	
+	public void SelectValueFromDropDown(WebElement element, String val)
+	{
+		Select s = new Select(element);
+		s.selectByVisibleText(val);
+	}
 	
 	
 	
